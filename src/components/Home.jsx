@@ -80,6 +80,8 @@ const Home = () => {
         </Typography>
       </Stack>
 
+
+      <div style={{marginTop: '-10px'}}>
       <Stack
         direction="row"
         justifyContent="center"
@@ -129,12 +131,16 @@ const Home = () => {
           </IconButton>
         </Tooltip>
       </Stack>
+      </div>
 
       <CaseButtons originalText={originalText} setText={setText} />
 
-      <Translation text={text} setText={setText} />
+      <div style={{ marginTop: "-35px" }}>
+        <Translation text={text} setText={setText} />
+      </div>
     </Stack>
+    
   );
 };
 
-export default Home
+export default Home;
