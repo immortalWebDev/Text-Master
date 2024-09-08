@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import { Box } from "@mui/system";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
         </Routes>
       </Box>
+      <Footer/>
     </Router>
   );
 }
