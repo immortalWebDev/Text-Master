@@ -54,7 +54,7 @@ const Home = () => {
         <TextField
           label="Type your text here"
           multiline
-          rows={6}
+          rows={5}
           variant="outlined"
           sx={{
             width: { xs: "90vw", sm: "85vw", md: "75vw", lg: "65vw" },
