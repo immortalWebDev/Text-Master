@@ -1,5 +1,6 @@
 import React from "react";
 import { Stack, Button } from "@mui/material";
+import { toTitleCase, toCamelCase,toPascalCase} from "text-trans";
 
 const CaseButtons = ({ originalText, setText }) => {
   
@@ -8,33 +9,20 @@ const CaseButtons = ({ originalText, setText }) => {
   };
 
   const toLowerCase = () => {
-    setText(originalText.toLowerCase());
-  };
-
-  const toTitleCase = () => {
     setText(
-      originalText.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase())
-    );
+      originalText.toLowerCase());
   };
 
-  const toCamelCase = () => {
-    let newText = originalText
-      .toLowerCase()
-      .split(/[\s-_]+/)
-      .map((word, index) =>
-        index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
-      )
-      .join("");
-    setText(newText);
+  const toTitle = () => {
+    setText(toTitleCase(originalText));
+  };
+  
+  const toCamel = () => {
+    setText(toCamelCase(originalText))
   };
 
-  const toPascalCase = () => {
-    let newText = originalText
-      .toLowerCase()
-      .split(/[\s-_]+/)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join("");
-    setText(newText);
+  const toPascal = () => {
+    setText(toPascalCase(originalText))
   };
 
   return (
@@ -58,7 +46,7 @@ const CaseButtons = ({ originalText, setText }) => {
       <Button
         variant="contained"
         color="primary"
-        onClick={toTitleCase}
+        onClick={toTitle}
         sx={{ textTransform: "none" }}
       >
         Title Case
@@ -66,7 +54,7 @@ const CaseButtons = ({ originalText, setText }) => {
       <Button
         variant="contained"
         color="primary"
-        onClick={toCamelCase}
+        onClick={toCamel}
         sx={{ textTransform: "none" }}
       >
         camelCase
@@ -74,7 +62,7 @@ const CaseButtons = ({ originalText, setText }) => {
       <Button
         variant="contained"
         color="primary"
-        onClick={toPascalCase}
+        onClick={toPascal}
         sx={{ textTransform: "none" }}
       >
         PascalCase
