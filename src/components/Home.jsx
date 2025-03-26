@@ -13,6 +13,7 @@ import DownloadIcon from "@mui/icons-material/Download";
 import Swal from "sweetalert2";
 import Translation from "./Translation";
 import CaseButtons from "./CaseButtons";
+import { wordCount } from "text-trans";
 
 const Home = () => {
   const [text, setText] = useState("");
@@ -44,9 +45,9 @@ const Home = () => {
     link.click();
   };
 
-  const wordCount = (word) => {
-    return word.split(/\s+/).filter((n) => n !== "").length;
-  };
+  // const wordCount = (word) => {
+  //   return word.split(/\s+/).filter((n) => n !== "").length;
+  // };
 
   return (
     <Stack direction="column" alignItems="center" gap={4} marginY={5}>

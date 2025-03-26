@@ -18,7 +18,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
     "sweetalert2": "^11.7.0",
-    "text-trans": "^1.0.4",
+    "text-trans": "^1.0.5",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
